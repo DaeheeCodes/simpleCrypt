@@ -76,7 +76,7 @@ cmp r5, r1
 // bge = greater, equal conditioanl
 bge EN_END_WHL_R5_LT_R1
 // step #6_de - load byte into register R6, the contents of R0[R5]
-ldrb r7, [r0, r5]
+ldrb r6, [r0, r5]
 // step #7_de - use bitwise AND with R5 and #255 to cast R5's value as char instead of int, store in R7
 and r7, r5, #255
 // step #8_de - subtract R6 and R7, storing result in R6
@@ -88,7 +88,7 @@ eor r6, r7
 // step #11_de - store byte in R6 to R0[R5]
 strb r6, [r0,r5]
 // step #12_de - increment R4 by one
-movge r4, #0
+add r4, #1
 DE_IF_R4_GE_R3:
 // step #13_de - compare R4 and R3 in this order of the registers
 cmp r4, r3
