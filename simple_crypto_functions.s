@@ -1,4 +1,4 @@
-.global encrypt
++.global encrypt
 .global decrypt
 
 .text
@@ -13,8 +13,11 @@
 .align 4
 encrypt:
 // step #1_en - Save R4,R5,R6,R7, and LR
+push {r4,r5,r6,r7, LR}
 // step #2_en - Set register R4 to 0
-// step #3_en - Set register R5 to 0
+mov r4, #0
+// step #3+_en - Set register R5 to 0
+mov r5, #0
 EN_WHL_R5_LT_R1:
 // step #4_en - compare R5 and R1 in this order of the registers
 // step #5_en - if R5 greater than or equal to R1, branch to EN_END_WHL_R5_LT_R1
